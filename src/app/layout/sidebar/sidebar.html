@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidebar">
+   <div class="side-head">
+     <span class="logo" >
+        <mat-icon>mail-outline</mat-icon>
+     </span>
+        Zaga
+   </div>
+    
+   <div class="btn-search">
+    <button matButton="elevated">
+        <mat-icon>add</mat-icon>
+        New Project
+    </button>
+    <label class="search">
+        <mat-icon>search</mat-icon>
+        <input type="search" placeholder="Search...">
+        <kbd>⌘K</kbd>
+    </label>
+   </div>
+
+   <div class="main-menu">
+    <span class="mm-head">Main Menu</span>
+     @for(l of lists; track l.title){
+        <div class="side-item">
+            <mat-icon class="m-ic"> {{l.icon}} </mat-icon>
+            <span class="m-title"> {{l.title}} </span>
+            <mat-icon class="m-ic2"> {{l.icon2}} </mat-icon>
+        </div>
+     }
+   </div>
+
+   <div class="projects">
+        <span class="p-head">Project</span>
+        <div class="p-item">
+            <mat-icon class="p-icon">trending_up</mat-icon>
+            <span class="p-title"> SaaS Blog Growth </span>
+        </div>
+   </div>
+
+</mat-sidenav-container>
