@@ -31,10 +31,25 @@
 
    <div class="projects">
         <span class="p-head">Project</span>
+
+        @for(p of pros; track p.ptitle){
         <div class="p-item">
-            <mat-icon class="p-icon">trending_up</mat-icon>
-            <span class="p-title"> SaaS Blog Growth </span>
+            <span class="p-icon" [style.--bg-color]="p.bg" >
+                <mat-icon [style.--color]="p.col"> {{p.micon}} </mat-icon>
+            </span>
+            <span class="p-title"> {{p.ptitle}} </span>
         </div>
+        }
+        
+   </div>
+
+   <div class="profile">
+        <span class="avatar"> <mat-icon>person</mat-icon></span>
+        <span class="pro-stack">
+            <span class="p-name">Jimmy Yadav</span>
+            <span class="p-desig">Project Manager</span>
+        </span>
+        <mat-icon class="p-ic">keyboard_arrow_down</mat-icon>
    </div>
 
 </mat-sidenav-container>

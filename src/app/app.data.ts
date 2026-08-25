@@ -18,3 +18,17 @@ export const List_Data: list[] = [
     {icon: 'group', title: 'Team & Workflow', icon2: 'keyboard_arrow_right'},
     {icon: 'settings', title: 'Settings'},
 ]
+
+export interface pro{
+    micon: string;
+    ptitle: string;
+    bg: string;
+    col: string;
+}
+
+export const Pro_Data: pro[] = [
+    {micon: 'trending_up', ptitle: 'Saas Blog Growth', bg: '#e1aeff', col: '#6e1bb1'},
+    {micon: 'storefront', ptitle: 'E-commerce Product', bg: '#f2cef7', col: '#d015e9'},
+    {micon: 'call_to_action', ptitle: 'Paid Ads Experiment', bg: '#c5ddfd', col: '#1578e9'},
+    {micon: 'hub', ptitle: 'Social Media Content', bg: '#b1f0b1', col: '#1a851a'},
+]

@@ -1,0 +1,66 @@
+:host {
+    position: fixed;
+    top: 0;
+    left: 200px; /* Sits right next to your 200px sidebar */
+    width: calc(100% - 200px); /* Fills the rest of the screen width */
+    height: 45px;
+    background: #ffffff;
+    border-bottom: 1px solid #0f172a12;
+    z-index: 99;
+    box-sizing: border-box;
+    box-shadow: 1px 0 4px gray;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    width: 100%;
+}
+
+.left-part{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 10px; 
+    min-width: 0;
+}
+
+.l-title{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.left-part mat-icon{
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: rgb(165, 164, 164);
+}
+
+.right-part{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-right: 10px;
+    flex-shrink: 0;
+}
+
+.right-part mat-icon{
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: rgb(116, 113, 113);
+}
+
+.right-part button{
+    border: none;
+    background: white;
+}
