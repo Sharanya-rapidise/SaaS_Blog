@@ -1,0 +1,82 @@
+.info{
+    width: 100%;
+    border: 1px solid rgba(27, 27, 27, 0.133);
+    background: linear-gradient(135deg, #e2b6ea 0%, #e0dbff 100%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px ;
+}
+
+.top{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    min-height: 0;
+}
+
+.pro-ic{
+    height: 44px;
+    width: 44px;
+    background: rgb(198, 167, 248);
+    color: rgb(61, 24, 87);
+    place-items: center;
+    display: grid;
+    border-radius: 8px;
+    border: 2px solid white;
+    outline: 0.5px solid rgb(224, 224, 224);
+    flex-shrink: 0;
+}
+
+.pro-ic mat-icon{
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+}
+
+.status{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #e3f7ea;
+    color: #15803d;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 13px; 
+    font-weight: 500;
+    border: none;
+}
+
+.status-dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+}
+
+.dot{
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #a3a3a3;
+}
+
+.text{
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 400;
+}
