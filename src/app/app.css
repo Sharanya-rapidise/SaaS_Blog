@@ -18,3 +18,16 @@
     padding: 18px 16px;
     margin-top: 45px;
 }
+
+.panels {
+  display: grid;
+  grid-template-columns: 7fr 3fr;   /* or 70% 30% */
+  gap: 16px;
+  align-items: start;   /* important: see below */
+}
+
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

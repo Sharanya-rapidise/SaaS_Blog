@@ -100,14 +100,27 @@
     flex-direction: column;
     padding:0px 10px 12px 16px;
     font-size: 14px;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+.main-menu::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, new Edge */
 }
 
 .mm-head{
     color: #7d7e81;
     border-bottom: 1px solid #0f172a12;
     letter-spacing: 0.02em;
-    padding-bottom: 6px;
+    /* padding-bottom: 6px; */
+    top: 0;
+    background: rgb(245, 244, 244);
+    z-index: 1;
+    padding: 8px 0;
+    position: sticky;
 }
 
 .m-title{

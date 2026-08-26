@@ -1,14 +1,16 @@
 .info{
     width: 100%;
     border: 1px solid rgba(27, 27, 27, 0.133);
-    background: linear-gradient(135deg, #e2b6ea 0%, #e0dbff 100%);
+    background: linear-gradient(135deg, #fcedff 0%, #e0dbff 100%);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 20px ;
+    position: relative;
+    margin-bottom: 10px;
 }
-
+ 
 .top{
     display: flex;
     gap: 12px;
@@ -43,27 +45,32 @@
 .status{
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 12px;
 }
 
 .status-badge{
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    background: #e3f7ea;
-    color: #15803d;
+    gap: 7px;
+    background: #ffffff;
+    color: black;
     border-radius: 999px;
+    border: 1px solid #0f172a12;
     padding: 4px 10px;
     font-size: 13px; 
     font-weight: 500;
     border: none;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
 }
 
 .status-dot{
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: #22c55e;
+    background: darkgreen;
+    outline: 1px solid rgb(62, 184, 62);
+    outline-offset: 1px;
     display: inline-block;
 }
 
@@ -74,9 +81,144 @@
     display: inline-block;
     background: #a3a3a3;
 }
+.n-dot{
+    font-weight: 700;
+}
 
 .text{
     color: #6b7280;
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.stack h1{
+    font-size: 34px;
+}
+
+.desc{
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.buttons{
+    position: absolute;
+    display: flex;
+    top: 12px;
+    right: 12px;
+    gap: 8px;
+}
+
+.pin-btn{
+    background: none;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    gap: 4px;
+    border-radius: 8px;
+    border: transparent;
+    box-shadow: -1.5px -1.5px 1px #f4f4f8, 1.5px 1.5px 1.5px #f8f6f8 ;
+    font-size: 15px;
+    color: rgb(44, 43, 43);
+}
+
+.pin-btn mat-icon{
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+.open{
+    background: none;
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 30px;
+    gap: 4px;
+    border-radius: 8px;
+    border: transparent;
+    box-shadow: -1.5px -1.5px 1px #f4f4f8, 1.5px 1.5px 1.5px #f8f6f8 ;
+    font-size: 15px;
+    color: rgb(44, 43, 43);
+}
+
+.open mat-icon{
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+.add{
+     background: none;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    gap: 4px;
+    border-radius: 8px;
+    border: transparent;
+    box-shadow: -1.5px -1.5px 1px #f4f4f8, 1.5px 1.5px 1.5px #f8f6f8 ;
+    font-size: 15px;
+    white-space: nowrap;
+    color: rgb(44, 43, 43);
+}
+
+.add mat-icon{
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}
+
+.progress-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+    
+}
+
+.bar-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pro-text{
+    display: flex;
+    gap: 8px;
+    color: rgb(71, 70, 70);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.pro-perc{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.perc-symbol{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.ledger{
+    display: flex;
+    height: 5px;
+    border-radius: 999px;
+    background: #0f172a0e;
+    overflow: hidden;
+    position: relative;
+}
+
+.ledger > i.l-fill{
+    background: linear-gradient(to right, #e26af7 0%, #7460fc 100%);
+    width: 70%;
+}
+
+.ledger > i{
+    display: block;
+    min-width: 0;
 }

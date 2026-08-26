@@ -1,0 +1,40 @@
+<div class="tab-list">
+    <button
+        [class.active]="activeTab === 'overview'"
+        (click)="selectedTab('overview')">
+        Overview
+    </button>
+
+    <button
+        [class.active]="activeTab === 'tasks'"
+        (click)="selectedTab('tasks')">
+        Tasks
+        <span class="num">24</span>
+    </button>
+
+    <button
+        [class.active]="activeTab === 'files'"
+        (click)="selectedTab('files')">
+        Files
+        <span class="num">18</span>
+    </button>
+
+    <button
+        [class.active]="activeTab === 'brief'"
+        (click)="selectedTab('brief')">
+        Brief
+    </button>
+
+    <button
+        [class.active]="activeTab === 'timeline'"
+        (click)="selectedTab('timeline')">
+        Timeline
+    </button>
+
+    <button
+        [class.active]="activeTab === 'activity'"
+        (click)="selectedTab('activity')">
+        Activity
+    </button>
+
+</div>
