@@ -17,6 +17,18 @@
 .page-content{
     padding: 18px 16px;
     margin-top: 45px;
+     
+    /* for scrolling */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+/* for-scrolloing */
+.page-content app-info,
+.page-content app-tabs {
+  flex-shrink: 0;   /* they keep their natural height and never scroll away */
 }
 
 .panels {
@@ -24,10 +36,14 @@
   grid-template-columns: 7fr 3fr;   /* or 70% 30% */
   gap: 16px;
   align-items: start;   /* important: see below */
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
 }
 
 .left-panel, .right-panel {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }

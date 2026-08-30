@@ -1,3 +1,5 @@
+import { Title } from "@angular/platform-browser";
+
 export interface list{
     icon: string;
     title: string;
@@ -31,4 +33,17 @@ export const Pro_Data: pro[] = [
     {micon: 'storefront', ptitle: 'E-commerce Product', bg: '#f2cef7', col: '#d015e9'},
     {micon: 'call_to_action', ptitle: 'Paid Ads Experiment', bg: '#c5ddfd', col: '#1578e9'},
     {micon: 'hub', ptitle: 'Social Media Content', bg: '#b1f0b1', col: '#1a851a'},
+]
+
+export interface rlist{
+    rtitle: string;
+    rsub: string;
+    status: string;
+    fcolor: string;
+}
+
+export const Tasks: rlist[] = [
+    {rtitle: 'Publish "10 Best Practices for HR Onboarding" article', rsub:'Article · Due tomorrow', status:'In review', fcolor: '#abab0e'},
+    {rtitle: 'Draft outline for "Onboarding Automation Guide"', rsub:'Outline · Due Feb 8', status:'In progress', fcolor: 'green'},
+    {rtitle: 'Research and Development for "Escalation Module"', rsub:'Report · Completed june 12', status:'Completed', fcolor: 'red'},
 ]

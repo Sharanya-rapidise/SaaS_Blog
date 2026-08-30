@@ -1,0 +1,131 @@
+.recent-tasks{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid #0f172a12;
+    border-radius: 12px;
+    padding: 12px 18px;
+    gap: 14px;
+    box-shadow: 5px 5px 12px #0f172a12, -5 5 12px #0f172a12;
+}
+
+.rt-topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rt-left{
+    display: flex;
+    flex-direction: column;
+}
+
+.rt-head{
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.rt-subhead{
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #6b6b6b;
+}
+
+.rt-right{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rt-right button{
+    background: white;
+    border: 1px solid #01020312;
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+.rt-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.row-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:28px;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #0f172a12;
+}
+
+.row-list:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.li-left{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.c-box{
+    height: 14px;
+    width: 14px;
+    border: 1px solid #bec0c0;
+    border-radius: 4px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.rt-stack{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.st-head{
+    font-size: 14px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.st-sub{
+    font-size: 12px;
+    color: rgb(92, 92, 92);
+    font-weight: 500;
+}
+
+.li-right{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.li-status{
+    font-size: 12px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.avatar{
+    display: grid;
+    background: rgb(238, 238, 238);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.avatar mat-icon{
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}

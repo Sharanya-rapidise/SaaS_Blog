@@ -1,0 +1,32 @@
+<div class="recent-tasks">
+    <div class="rt-topbar">
+        <div class="rt-left">
+            <span class="rt-head">Recent Tasks</span>
+            <span class="rt-subhead">5 of 24  ·  8 due this week</span>
+        </div>
+
+        <div class="rt-right">
+            <button>View all</button>
+            <button>+New</button>
+        </div>
+    </div>
+
+    <div class="rt-list">
+        @for(l of li ; track l.rtitle){
+            <div class="row-list">
+            <div class="li-left">
+                <input type="checkbox" class="c-box">
+                <span class="rt-stack">
+                    <span class="st-head"> {{l.rtitle}} </span>
+                    <span class="st-sub"> {{l.rsub}} </span>
+                </span>  
+            </div>
+
+            <div class="li-right">
+                <span class="li-status" [style.color]="l.fcolor"> {{l.status}} </span>
+                <span class="avatar"><mat-icon>person</mat-icon></span>
+            </div>
+            </div>
+        }
+    </div>
+</div>
