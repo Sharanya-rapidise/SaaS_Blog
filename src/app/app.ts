@@ -7,10 +7,20 @@ import { Tabs } from './cards/tabs/tabs';
 import { About } from './cards/about/about';
 import { Data } from './cards/data/data';
 import { RecentTasks } from './cards/recent-tasks/recent-tasks';
-
+import { Team } from './cards/team/team';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Sidebar, Header, Info, Tabs, About, Data, RecentTasks],
+  imports: [
+    RouterOutlet, 
+    Sidebar, 
+    Header, 
+    Info, 
+    Tabs, 
+    About, 
+    Data, 
+    RecentTasks,
+    Team
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

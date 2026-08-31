@@ -47,3 +47,16 @@ export const Tasks: rlist[] = [
     {rtitle: 'Draft outline for "Onboarding Automation Guide"', rsub:'Outline · Due Feb 8', status:'In progress', fcolor: 'green'},
     {rtitle: 'Research and Development for "Escalation Module"', rsub:'Report · Completed june 12', status:'Completed', fcolor: 'red'},
 ]
+
+export interface teams{
+    init: string;
+    tname: string;
+    desig: string;
+}
+
+export const TEAM_LIST: teams[] = [
+    {init: 'A', tname:'Andika', desig:'Project Lead'},
+    {init: 'S', tname:'Sarah Chen', desig:'CEO · Primary contact'},
+    {init: 'M', tname:'Marcus Rivera', desig:'CMO  · Marketing lead'},
+    {init: 'P', tname:'Priyal Patel', desig:'Content Director'},
+]

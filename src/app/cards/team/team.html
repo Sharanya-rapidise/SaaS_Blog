@@ -1,0 +1,22 @@
+<div class="team">
+    <div class="t-head">
+        <div class="head-stack">
+            <span class="title">Team</span>
+            <span class="sub-title">4 members</span>
+        </div>
+        <button>+</button>
+    </div>
+
+    <div class="t-list">
+        @for(t of te; track t.init){
+            <div class="t-inbox">
+            <span class="avatar"> {{t.init}} </span>
+            <div class="t-info">
+                <span> {{t.tname}} </span>
+                <span> {{t.desig}} </span>
+            </div>
+            <span class="perc">100%</span>
+         </div>
+        }
+    </div>
+</div>
