@@ -4,18 +4,33 @@
             <span class="title">Team</span>
             <span class="sub-title">4 members</span>
         </div>
-        <button>+</button>
+        <button (click)="openDialog()">+</button>
     </div>
 
     <div class="t-list">
-        @for(t of te; track t.init){
+        <!-- @for(t of te; track t.init){
             <div class="t-inbox">
-            <span class="avatar"> {{t.init}} </span>
+                <div class="wrap">
+            <span class="avatar" [style.background]="t.col" [style.color]="t.cCol"> {{t.init}} </span>
             <div class="t-info">
-                <span> {{t.tname}} </span>
-                <span> {{t.desig}} </span>
+                <span class="name"> {{t.tname}} </span>
+                <span class="desig"> {{t.desig}} </span>
+            </div>
             </div>
             <span class="perc">100%</span>
+         </div>
+        } -->
+
+        @for(member of teamService.teamList; track member.name){
+            <div class="t-inbox">
+                <div class="wrap">
+            <span class="avatar" > A </span>
+            <div class="t-info">
+                <span class="name"> {{member.name}} </span>
+                <span class="desig"> {{member.role}} </span>
+            </div>
+            </div>
+            <span class="perc">  {{member.allocation}}%</span>
          </div>
         }
     </div>

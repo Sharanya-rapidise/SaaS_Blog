@@ -1,0 +1,14 @@
+<div class="pro-info">
+    <div class="p-head">
+        <span>Project info</span>
+    </div>
+
+    <div class="pro-list">
+        @for(p of pro; track p.cat){
+            <div class="pro-inbox">
+                <span class="cat"> {{p.cat}} </span>
+                <span class="info"> {{p.info}} </span>
+            </div>
+        }
+    </div>
+</div>

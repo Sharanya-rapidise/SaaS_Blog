@@ -1,25 +1,30 @@
+
+
+
 <div class="app-container">
     <app-sidebar></app-sidebar>
 
   <div class="main-layout">
     <app-header></app-header>
 
-    <main class="page-content">
-      <app-info></app-info>
-      <app-tabs></app-tabs>
+    @if (overview(); as ov) {
+      <main class="page-content">
+        <app-info [header]="ov.oHeader"></app-info>
+        <app-tabs [counts]="ov.oTabCounts"></app-tabs>
 
-      <div class="panels">
-        <div class="left-panel">
-          <app-about></app-about>
-          <app-data></app-data>
-          <app-recent-tasks></app-recent-tasks>
-        </div>
+        <div class="panels">
+          <div class="left-panel">
+            <app-about [about]="ov.oAbout"></app-about>
+            <app-data [stats]="ov.oStats"></app-data>
+            <app-recent-tasks></app-recent-tasks>
+          </div>
 
-        <div class="right-panel">
-          <app-team></app-team>
-        </div>
-       </div>
-    </main>
-
+          <div class="right-panel">
+            <app-team [team]="ov.oTeam"></app-team>
+            <app-project-info [info]="ov.oProjectInfo"></app-project-info>
+          </div>
+         </div>
+      </main>
+    }
   </div>
 </div>

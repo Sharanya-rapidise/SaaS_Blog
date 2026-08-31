@@ -42,8 +42,20 @@
   min-height: 0;
 }
 
+.panels::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, new Edge */
+}
+
+@media (max-width: 1024px){
+  .panels{
+    grid-template-columns: 1fr;
+  }
+}
+
 .left-panel, .right-panel {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  flex: 1;
+  min-width: 0;
 }

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Sidebar } from './layout/sidebar/sidebar';
 import { Header } from './layout/header/header';
@@ -8,6 +8,9 @@ import { About } from './cards/about/about';
 import { Data } from './cards/data/data';
 import { RecentTasks } from './cards/recent-tasks/recent-tasks';
 import { Team } from './cards/team/team';
+import { ProjectInfo } from './cards/projec-info/projec-info';
+import { ProjectOverviewService, ProjectOverviewData } from './app.service';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -19,7 +22,8 @@ import { Team } from './cards/team/team';
     About, 
     Data, 
     RecentTasks,
-    Team
+    Team,
+    ProjectInfo
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -27,4 +31,13 @@ import { Team } from './cards/team/team';
 
 export class App {
   protected readonly title = signal('SaaS_Blog');
+
+  private overviewService = inject(ProjectOverviewService);
+  protected readonly overview = signal<ProjectOverviewData | null>(null);
+
+  ngOnInit() {
+    this.overviewService.getProjectOverview(2).subscribe(data => this.overview.set(data));
+  }
 }
+
+

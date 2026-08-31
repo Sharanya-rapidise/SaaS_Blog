@@ -52,11 +52,27 @@ export interface teams{
     init: string;
     tname: string;
     desig: string;
+    col: string;
+    cCol: string;
 }
 
 export const TEAM_LIST: teams[] = [
-    {init: 'A', tname:'Andika', desig:'Project Lead'},
-    {init: 'S', tname:'Sarah Chen', desig:'CEO · Primary contact'},
-    {init: 'M', tname:'Marcus Rivera', desig:'CMO  · Marketing lead'},
-    {init: 'P', tname:'Priyal Patel', desig:'Content Director'},
+    {init: 'A', tname:'Andika', desig:'Project Lead', col:'#cecefa', cCol:'blue'},
+    {init: 'S', tname:'Sarah Chen', desig:'CEO · Primary contact', col:'#fde3e7', cCol:'#cf1531'},
+    {init: 'M', tname:'Marcus Rivera', desig:'CMO  · Marketing lead', col:'#dff7df', cCol:'#054b05'},
+    {init: 'P', tname:'Priyal Patel', desig:'Content Director', col:'#f3d0f3', cCol:'#580858'},
+]
+
+export interface proinfo{
+    cat: string;
+    info: string;
+}
+
+export const P_INFO: proinfo[] = [
+    {cat: 'Client', info: 'Acme Cloud'},
+    {cat: 'Industry', info: 'SaaS · HR-tech'},
+    {cat: 'Started', info: 'Jan 8, 2026'},
+    {cat: 'Deadline', info: 'Feb 28, 2026'},
+    {cat: 'Budget', info: '$24,000'},
+    {cat: 'Type', info: 'Content engine'},
 ]

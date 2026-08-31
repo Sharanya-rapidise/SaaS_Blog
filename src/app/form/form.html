@@ -1,0 +1,23 @@
+<h2 mat-dialog-title style="font-size: 24px; font-weight: 700; align-items: left; margin-bottom: 8px;"> Add Team Member</h2>
+
+<mat-dialog-content>
+    <div class="inbox">
+        <label>Name: </label>
+        <input type="text" [(ngModel)]="member.name" placeholder="Enter Name">
+    </div>
+
+    <div class="inbox">
+        <label>Role: </label>
+        <input type="text" [(ngModel)]="member.role" placeholder="Enter role/designation">
+    </div>
+
+    <div class="inbox">
+        <label>Allocation(%): </label>
+        <input type="number" [(ngModel)]="member.allocation" placeholder="Enter percentage">
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="btns">
+    <button (click)="onCancel()">Cancel</button>
+    <button (click)="onSave()">Save</button>
+</mat-dialog-actions>
