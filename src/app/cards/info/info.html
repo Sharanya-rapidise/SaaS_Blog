@@ -8,22 +8,16 @@
     <div class="status">
         <button class="status-badge">
             <span class="status-dot"></span>
-            On track
+            {{header.vProjectStatusLabel}}
         </button>
         <i class="dot"></i>
-        <span class="text">23 days to deadline</span>
+        <span class="text">  {{header.iDaysRemaining | solidDays}} days to deadline</span>
         <i class="dot"></i>
-        <span class="text">Started Jan 8, 2026</span>
+        <span class="text">Started {{header.iStartDate | date:'mediumDate'}} </span>
     </div>
 
-        <h1>SaaS Blog Growth</h1>
-        <!-- <span class="text2">Acme Cloud 
-            <i class="dot"></i>
-            Quadruple traffic via a 24-piece content engine. Targeting non-brand keywords with
-            high commercial intent.
-        </span> -->
-        <span class="desc">Acme Cloud <span class="n-dot">·</span> Quadruple traffic via a 24-piece content engine. Targeting non-brand keywords with
-            high commercial intent.</span>
+        <h1> {{header.vProjectName}} </h1>
+        <span class="desc"> {{header.txDescription}} </span>
     
     </div>
 
@@ -45,11 +39,10 @@
 
     <div class="progress-bar">
         <div class="bar-details">
-            <span class="pro-text">Project progress <i class="n-dot" style="color: gray;">·</i> 16 of 24 tasks done</span>
-            <span class="pro-perc">68<span class="perc-symbol">%</span></span>
+            <span class="pro-text">Project progress ·  {{header.iDoneTasks}} of {{header.iTotalTasks}} tasks done</span>
+            <span class="pro-perc"> {{header.iProgressPercent}} <span class="perc-symbol">%</span></span>
         </div>
         <div class="ledger">
-            <!-- <div class="ledger-fill"></div> -->
              <i class="l-fill"></i>
              <i class="l-empty"></i>
         </div>

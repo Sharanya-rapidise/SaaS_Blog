@@ -4,11 +4,42 @@
     </div>
 
     <div class="pro-list">
-        @for(p of pro; track p.cat){
+        <!-- @for(p of pro; track p.cat){
             <div class="pro-inbox">
                 <span class="cat"> {{p.cat}} </span>
                 <span class="info"> {{p.info}} </span>
             </div>
-        }
+        } -->
+
+        <div class="pro-inbox">
+            <span class="cat">Client</span>
+            <span class="info"> {{info.vClientName}} </span>
+        </div>
+
+        <div class="pro-inbox">
+            <span class="cat">Industry</span>
+            <span class="info"> {{info.vIndustry}} </span>
+        </div>
+
+        <div class="pro-inbox">
+            <span class="cat">Started</span>
+            <span class="info"> {{info.iStartDate | date}} </span>
+        </div>
+
+        <div class="pro-inbox">
+            <span class="cat">Deadline</span>
+            <span class="info"> {{info.iDeadline | date}} </span>
+        </div>
+
+        <div class="pro-inbox">
+            <span class="cat">Budget</span>
+            <span class="info"> {{(info.dBudgetTotal | currency: 'USD' : 'symbol' :'1.0-0')}} </span>
+        </div>
+
+        <div class="pro-inbox">
+            <span class="cat">Type</span>
+            <span class="info"> {{info.vProjectType}} </span>
+        </div>
+
     </div>
 </div>

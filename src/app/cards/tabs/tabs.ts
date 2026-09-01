@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ProjectOverviewData } from '../../app.service';
 
 @Component({
   imports: [MatIconModule],
@@ -9,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './tabs.html',
 })
 export class Tabs {
+  @Input() counts!: ProjectOverviewData['oTabCounts'];
+
   activeTab: string = 'overview';
 
   selectedTab(tabId: string): void {

@@ -9,14 +9,14 @@
         [class.active]="activeTab === 'tasks'"
         (click)="selectedTab('tasks')">
         Tasks
-        <span class="num">24</span>
+        <span class="num"> {{counts.iTasks}} </span>
     </button>
 
     <button
         [class.active]="activeTab === 'files'"
         (click)="selectedTab('files')">
         Files
-        <span class="num">18</span>
+        <span class="num"> {{counts.iFiles}} </span>
     </button>
 
     <button
@@ -35,6 +35,7 @@
         [class.active]="activeTab === 'activity'"
         (click)="selectedTab('activity')">
         Activity
+        <span class="num"> {{counts.iActivities}} </span>
     </button>
 
 </div>

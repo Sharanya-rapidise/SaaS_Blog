@@ -1,33 +1,42 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from '../environments/environment';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 
-export interface TeamMember {
-  name: string;
-  role: string;
-  allocation: number;
+// export interface TeamMember {
+//   name: string;
+//   role: string;
+//   allocation: number;
+// }
+
+export interface TeamMember{
+  vName: string;
+  vRole: string;
+  vRoleNote: string | null;
+  iAllocation: number;
+  vAvatarInitial: string;
+  vAvatarColor: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
-export class TeamService {
-  teamList: TeamMember[] = [];
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class TeamService {
+//   teamList: TeamMember[] = [];
 
-  constructor() {
-    const savedData = localStorage.getItem('myTeamData');
-    if (savedData) {
-      this.teamList = JSON.parse(savedData);
-    }
-  }
+//   constructor() {
+//     const savedData = localStorage.getItem('myTeamData');
+//     if (savedData) {
+//       this.teamList = JSON.parse(savedData);
+//     }
+//   }
 
-  addTeamMember(newMember: TeamMember) {
-    this.teamList.push(newMember);
-    localStorage.setItem('myTeamData', JSON.stringify(this.teamList));
-  }
-}
+//   addTeamMember(newMember: TeamMember) {
+//     this.teamList.push(newMember);
+//     localStorage.setItem('myTeamData', JSON.stringify(this.teamList));
+//   }
+// }
 
 export interface ProjectOverviewData {
   oHeader: {
@@ -89,7 +98,7 @@ export interface ProjectOverviewData {
 
 interface ApiResponse<T> {
   status: string;
-  message: string;
+  message?: string;
   code: number;
   data: T;
 }
@@ -99,9 +108,42 @@ export class ProjectOverviewService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.project_managment_url}/v1/project/project-overview`;
 
+  //for holding the shared state of pro-overview
+  private projectOverview$ = new BehaviorSubject<ProjectOverviewData | null>(null);
+
+  getOverviewStream(): Observable<ProjectOverviewData | null> {
+    return this.projectOverview$.asObservable();
+  }
+
   getProjectOverview(iProjectId: number): Observable<ProjectOverviewData> {
     return this.http
-      .get<ApiResponse<ProjectOverviewData>>(this.apiUrl, { params: { iProjectId } })
-      .pipe(map(res => res.data));
+      .get<ApiResponse<ProjectOverviewData>>(this.apiUrl)
+      .pipe(
+        map(res => res.data),
+        tap(data => this.projectOverview$.next(data))
+      );
+  }
+
+  //post req: this will save member to database and also showup in ui
+  addTeamMember(iProjectId: number, newMember: TeamMember): Observable<ApiResponse<any>>{
+    const addMemberUrl = `${environment.project_managment_url}/v1/project/add-member`;
+
+    //send the project id + new member details
+    return this.http.post<ApiResponse<any>>(addMemberUrl, {iProjectId, ...newMember}).pipe(
+      tap(() => {
+        const currentData = this.projectOverview$.getValue();
+        if(currentData && currentData.oTeam){
+          const updatedMembers = [...currentData.oTeam.aMembers, newMember];
+
+          this.projectOverview$.next({
+            ...currentData,
+            oTeam: {
+              iMemberCount: updatedMembers.length,
+              aMembers: updatedMembers
+            }
+          })
+        }
+      })
+    )
   }
 }

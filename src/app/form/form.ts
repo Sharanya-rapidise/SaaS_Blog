@@ -1,7 +1,12 @@
 import { Component, inject} from '@angular/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { FormsModule} from '@angular/forms';
-import { TeamService, TeamMember } from '../app.service';
+import { FormsModule, NonNullableFormBuilder} from '@angular/forms';
+
+export interface FormResult{
+  vName: string;
+  vRole: string;
+  iAllocation: number;
+}
 
 @Component({
   imports: [MatDialogModule, FormsModule],
@@ -11,10 +16,12 @@ import { TeamService, TeamMember } from '../app.service';
   templateUrl: './form.html',
 })
 export class Form {
-  member: TeamMember = {
-    name: '',
-    role: '',
-    allocation: 0
+  // private fb = inject(NonNullableFormBuilder);
+
+  member: FormResult = {
+    vName: '',
+    vRole: '',
+    iAllocation: 0
   };
 
   dialogRef = inject(MatDialogRef<Form>);

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-
+import { ProjectOverviewData } from '../../app.service';
 @Component({
   imports: [MatIconModule],
   standalone: true,
@@ -9,5 +9,5 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './about.html',
 })
 export class About {
-  
+  @Input() about!: ProjectOverviewData['oAbout'];
 }

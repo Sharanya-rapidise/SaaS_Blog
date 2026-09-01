@@ -1,18 +1,18 @@
 <div class="data">
 
     <div class="data-row">
-        <span class="head">24<span>/35</span></span>
-        <span class="subhead">Tasks 16 done</span>
+        <span class="head"> {{stats.oTasks.iTotalTasks}} <span>/{{stats.oTasks.iTaskCapacity}} </span></span>
+        <span class="subhead">Tasks {{stats.oTasks.iDoneTasks}} done</span>
     </div>
 
     <div class="data-row">
-        <span class="head">23<span>d</span></span>
-        <span class="subhead">until Feb 28</span>
+        <span class="head"> {{stats.oTimeline.iDaysRemaining | solidDays}} <span>d</span></span>
+        <span class="subhead">until Feb {{stats.oTimeline.iDeadline | date: 'dd, yyyy'}} </span>
     </div>
 
     <div class="data-row">
         <span class="head">$11k<span>/24k</span></span>
-        <span class="subhead">Budget 45% used</span>
+        <span class="subhead">Budget {{stats.oBudget.iUsedPercent}}% used</span>
     </div>
 
     <div class="data-row">

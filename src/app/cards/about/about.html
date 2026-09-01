@@ -6,14 +6,10 @@
     </div>
 
     <div class="descr">
-        Acme cloud is a SaaS HR-tech platform. They wanted to 4× 
-        organic traffic to their blog within 6 months by attacking
-        high-intent commercial keywords their competitors were ignoring. We're 
-        running a 24-article content engine plus targeted SEO refreshes
-        on existing top performers.
+        {{about.txAbout}}
     </div>
 
-    <div class="a-row" style="padding-top: 4px;">
+    <!-- <div class="a-row" style="padding-top: 4px;">
         <span class="check-ic"><mat-icon>check</mat-icon></span>
         <span class="row-text">
             24 long-form articles by end of Q1 — 
@@ -43,5 +39,15 @@
             Build 12 internal-link clusters — 
             <span>7/12 mapped</span>
         </span>
-    </div>
+    </div> -->
+
+    @for (goal of about.aGoals; track goal.vGoalTitle) {
+  <div class="a-row">
+    <span class="check-ic" [class.emp]="!goal.tiIsDone"><mat-icon>check</mat-icon></span>
+    <span class="row-text">
+      {{ goal.vGoalTitle }} —
+      <span>{{ goal.iCurrentValue }}/{{ goal.iTargetValue }} {{ goal.vUnit }}</span>
+    </span>
+  </div>
+}
 </div>
