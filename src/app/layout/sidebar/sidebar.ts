@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -18,8 +18,15 @@ import { list, List_Data , pro, Pro_Data} from '../../app.data';
   templateUrl: './sidebar.html',
 })
 export class Sidebar {
-  isOpened = true;
+
+  // isCollapsed = false;
+  // @Output() collapsedChange = new EventEmitter<boolean>();
 
   protected readonly lists: list[] = List_Data;
   protected readonly pros: pro[] = Pro_Data;
+
+  // toggleSidebar(): void {
+  //   this.isCollapsed = !this.isCollapsed;
+  //   this.collapsedChange.emit(this.isCollapsed);
+  // }
 }

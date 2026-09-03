@@ -117,7 +117,7 @@ export class ProjectOverviewService {
 
   getProjectOverview(iProjectId: number): Observable<ProjectOverviewData> {
     return this.http
-      .get<ApiResponse<ProjectOverviewData>>(this.apiUrl)
+      .get<ApiResponse<ProjectOverviewData>>(this.apiUrl, {params: {iProjectId}})
       .pipe(
         map(res => res.data),
         tap(data => this.projectOverview$.next(data))
@@ -125,11 +125,19 @@ export class ProjectOverviewService {
   }
 
   //post req: this will save member to database and also showup in ui
-  addTeamMember(iProjectId: number, newMember: TeamMember): Observable<ApiResponse<any>>{
-    const addMemberUrl = `${environment.project_managment_url}/v1/project/add-member`;
+  addTeamMember(iProjectId: any, newMember: TeamMember): Observable<ApiResponse<any>>{
+    const addMemberUrl = `${environment.project_managment_url}/v1/project/add-team-member?bMock=0`;
+
+    const payload = {
+      iProjectId: Number(iProjectId),
+      ...newMember
+    }
 
     //send the project id + new member details
-    return this.http.post<ApiResponse<any>>(addMemberUrl, {iProjectId, ...newMember}).pipe(
+    return this.http.post<ApiResponse<any>>(
+      addMemberUrl, 
+      payload)
+      .pipe(
       tap(() => {
         const currentData = this.projectOverview$.getValue();
         if(currentData && currentData.oTeam){
@@ -145,5 +153,21 @@ export class ProjectOverviewService {
         }
       })
     )
+  }
+
+  getNewMember(iProjectId: any): Observable<any>{
+    const newMemberUrl = `${environment.project_managment_url}/v1/project/team-members`;
+
+    return this.http.get<ApiResponse<any>>(newMemberUrl, {
+      params: {iProjectId: String(iProjectId)},
+
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    }).pipe(
+      map(res => res.data)
+    );
   }
 }

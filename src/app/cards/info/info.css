@@ -216,7 +216,6 @@
 
 .ledger > i.l-fill{
     background: linear-gradient(to right, #e26af7 0%, #7460fc 100%);
-    width: 70%;
 }
 
 .ledger > i{

@@ -2,7 +2,7 @@
     <div class="t-head">
         <div class="head-stack">
             <span class="title">Team</span>
-            <span class="sub-title"> {{team.iMemberCount}} members</span>
+            <span class="sub-title"> {{team()?.iMemberCount}} members</span>
         </div>
         <button (click)="openDialog()">+</button>
     </div>
@@ -34,7 +34,7 @@
          </div>
         } -->
 
-        @for (m of team.aMembers; track m.vName) {
+        @for (m of team()?.aMembers; track m.vName) {
         <div class="t-inbox">
             <div class="wrap">
                 <span class="avatar" [style.background]="m.vAvatarColor"> {{ m.vAvatarInitial }} </span>

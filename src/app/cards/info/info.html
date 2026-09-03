@@ -43,7 +43,7 @@
             <span class="pro-perc"> {{header.iProgressPercent}} <span class="perc-symbol">%</span></span>
         </div>
         <div class="ledger">
-             <i class="l-fill"></i>
+             <i class="l-fill" [style.width.%]="header.iProgressPercent"></i>
              <i class="l-empty"></i>
         </div>
     </div>

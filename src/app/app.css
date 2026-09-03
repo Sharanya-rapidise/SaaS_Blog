@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin-left: 200px; 
+  margin-left: 200px;
   height: 100%;
   position: relative;
 }
@@ -43,7 +43,7 @@
 }
 
 .panels::-webkit-scrollbar {
-  display: none;               /* Chrome, Safari, new Edge */
+  display: none;
 }
 
 @media (max-width: 1024px){
@@ -58,4 +58,20 @@
   gap: 18px;
   flex: 1;
   min-width: 0;
+}
+
+@media screen and (max-width: 768px) {
+  app-sidebar{
+    display: none;
+  }
+
+  app-header{
+    left: 0;
+    width: 100vw;
+  }
+
+  .page-content{
+    left: 0;
+    width: 100vw;
+  }
 }

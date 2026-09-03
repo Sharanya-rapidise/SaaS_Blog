@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     background: rgb(245, 244, 244);
-    width: 200px;
+    width: 200px; 
     height: 100vh;
     position: fixed;
     overflow-x: hidden;
     box-shadow: 1px 0 4px gray;
+    transition: width 0.3s ease;
 }
 
 .side-head{
@@ -20,6 +21,7 @@
     align-items: center;
     gap: 9px;
     flex-shrink: 0;
+    justify-content: space-between;
 }
 
 .side-head .logo{
@@ -36,6 +38,12 @@
     height: 24px;
     width: 24px;
     font-size: 24px;
+}
+
+.left-side-head{
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-search{
@@ -260,4 +268,10 @@
     height: 16px;
     font-size: 16px;
     margin-left: auto;
+}
+
+@media screen and (max-width: 768px){
+    .sidebar{
+        display: none;
+    }
 }

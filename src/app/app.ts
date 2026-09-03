@@ -31,6 +31,9 @@ import { ProjectOverviewService, ProjectOverviewData } from './app.service';
 
 export class App {
   protected readonly title = signal('SaaS_Blog');
+  protected readonly sidebarCollapsed = signal(false);
+
+  onSidebarCollapsedChange(v: boolean){this.sidebarCollapsed.set(v);}
 
   private overviewService = inject(ProjectOverviewService);
   protected readonly overview = signal<ProjectOverviewData | null>(null);
