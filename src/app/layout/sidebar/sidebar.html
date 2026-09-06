@@ -27,12 +27,26 @@
 
    <div class="main-menu">
     <span class="mm-head">Main Menu</span>
+
      @for(l of lists; track l.title){
-        <div class="side-item">
+        <div class="side-item" [class.open]="isOpen(l)" (click)="toggle(l)">
             <mat-icon class="m-ic"> {{l.icon}} </mat-icon>
             <span class="m-title"> {{l.title}} </span>
-            <mat-icon class="m-ic2"> {{l.icon2}} </mat-icon>
+            @if(l.icon2){
+                <mat-icon class="m-ic2"> {{l.icon2}} </mat-icon>
+            }
         </div>
+
+        @if(l.children?.length && isOpen(l)) {
+            <div class="sub-menu">
+                @for(c of l.children; track c.title){
+                    <div class="side-item sub-item">
+                        <mat-icon class="m-ic"> {{c.icon}} </mat-icon>
+                        <span class="m-title"> {{c.title}} </span>
+                    </div>
+                }
+            </div>
+        }
      }
    </div>
 

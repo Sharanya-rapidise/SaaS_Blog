@@ -4,6 +4,7 @@ export interface list{
     icon: string;
     title: string;
     icon2 ?: string;
+    children?: list[];
 }
 
 export const List_Data: list[] = [
@@ -12,7 +13,10 @@ export const List_Data: list[] = [
     {icon:'account_balance', title: 'Client'},
     {icon:'description', title: 'Resources'},
     {icon:'trending_up', title: 'Opportunities'},
-    {icon:'task_alt', title: 'Optimize', icon2: 'keyboard_arrow_right'},
+    {icon:'task_alt', title: 'Optimize', icon2: 'keyboard_arrow_right', children: [
+        {icon: 'language', title: 'Divisions'},
+        {icon: 'newspaper', title: 'Stakeholder devisions'}
+    ]},
     {icon: 'badge', title: 'Keywords'},
     {icon: 'view_in_ar', title: 'Topics'},
     {icon: 'trending_up', title: 'Performance'},

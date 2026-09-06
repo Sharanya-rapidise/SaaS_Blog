@@ -136,12 +136,22 @@
     text-overflow: ellipsis;
 }
 
+.m-ic2{
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
+
 .side-item{
     padding-top: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.side-item.open .m-ic2{
+    transform: rotate(90deg);
 }
 
 .side-item mat-icon{
@@ -150,8 +160,26 @@
     font-size: 16px;
 }
 
-.side-item mat-icon:last-of-type{
+/* .side-item mat-icon:last-of-type{
     margin-left: auto;
+} */
+
+.sub-menu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 7px;
+    padding-left: 13px;
+    border-left: 1px solid #0f172a12;
+}
+
+.sub-item .m-ic,
+.sub-item .m-title{
+    color: #6b6c6f;                  
+}
+
+.sub-item{
+    padding-left: 26px;
+    font-size: 13.5px;
 }
 
 .projects{

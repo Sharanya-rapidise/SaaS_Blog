@@ -19,14 +19,18 @@ import { list, List_Data , pro, Pro_Data} from '../../app.data';
 })
 export class Sidebar {
 
-  // isCollapsed = false;
-  // @Output() collapsedChange = new EventEmitter<boolean>();
-
   protected readonly lists: list[] = List_Data;
   protected readonly pros: pro[] = Pro_Data;
 
-  // toggleSidebar(): void {
-  //   this.isCollapsed = !this.isCollapsed;
-  //   this.collapsedChange.emit(this.isCollapsed);
-  // }
+  private readonly openItems = new Set<string>();
+
+  toggle(item: list): void{
+    if(!item.children?.length) return;
+    this.openItems.has(item.title) ? this.openItems.delete(item.title) : this.openItems.add(item.title);
+  }
+
+  isOpen(item: list): boolean{
+    return this.openItems.has(item.title);
+  }
+
 }
